@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <h2>Edit recipe</h2>
+    <app-recipe-form
+      [btnAction]="'Edit'"
+      [oldRecipe]="recipe"
+      (onSubmitForm)="editRecipe($event)"></app-recipe-form>
+  </div>
+</div>
+

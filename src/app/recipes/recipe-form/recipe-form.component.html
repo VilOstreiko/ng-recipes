@@ -1,0 +1,104 @@
+<form [formGroup]="recipeForm" (ngSubmit)="submitForm()">
+  <label>Title</label>
+  <input
+    type="text"
+    class="form-control"
+    formControlName="title"
+  >
+  <p
+    class="inputs-error"
+    *ngIf="!title.valid && title.touched && title.errors.required"
+  >* Title is required</p>
+  <p
+    class="inputs-error"
+    *ngIf="!title.valid && title.touched && title.errors.maxlength"
+  >* Title max length is {{ titleMaxLength }} symbols!</p>
+
+  <label>Description</label>
+  <textarea
+    class="form-control"
+    rows="5"
+    formControlName="description"
+  ></textarea>
+  <p
+    class="inputs-error"
+    *ngIf="!description.valid && description.touched"
+  >* Description is required</p>
+
+  <label>Photo url</label>
+  <input
+    type="text"
+    class="form-control"
+    formControlName="photoUrl"
+  >
+  <p
+    class="inputs-error"
+    *ngIf="!photoUrl.valid && photoUrl.touched && photoUrl.errors.required"
+  >* Photo URL is required</p>
+  <p
+    class="inputs-error"
+    *ngIf="!photoUrl.valid && photoUrl.touched && photoUrl.errors.isUrlInvalid"
+  >* Photo URL must be valid url</p>
+
+  <div formArrayName="ingredients">
+    <label>Ingredients</label>
+    <button
+      type="button"
+      class="btn btn-success add-ingredient-btn"
+      (click)="addIngredient()"
+    >
+      <fa name="plus"></fa>
+    </button>
+    <div
+      class="ingredients-inputs-wp clearfix"
+      *ngFor="let ingredient of ingredients.controls; let i = index"
+    >
+      <input
+        type="text"
+        class="form-control ingredients-input"
+        [formControlName]="i"
+      >
+      <button
+        type="button"
+        class="btn remove-ingredient-btn"
+        (click)="removeIngredient(i)"
+      >
+        <fa name="times"></fa>
+      </button>
+    </div>
+  </div>
+
+  <label>Instructions</label>
+  <textarea
+    class="form-control"
+    rows="5"
+    formControlName="instructions"
+  ></textarea>
+  <p
+    class="inputs-error"
+    *ngIf="!instructions.valid && instructions.touched"
+  >* Instructions is required</p>
+
+  <label>Category</label>
+  <select
+    class="form-control categories-select"
+    formControlName="categoryId"
+  >
+    <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+  </select>
+  <p
+    class="inputs-error"
+    *ngIf="!category.valid && category.touched"
+  >* Category is required</p>
+
+  <br>
+
+  <div class="text-right">
+    <button
+      class="btn btn-success submit-button"
+      [disabled]="!recipeForm.valid"
+    >
+      {{btnAction}}
+    </button>
+  </div>
+</form>

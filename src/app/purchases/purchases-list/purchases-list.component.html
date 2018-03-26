@@ -1,0 +1,9 @@
+<h3>Purchases List</h3>
+<ul class="list-group" *ngIf="purchases.length">
+  <li class="list-group-item" *ngFor="let purchaseItem of purchases">
+    {{purchaseItem.purchase}}
+    <a (click)="deleteIngredient(purchaseItem.id)">
+      <fa name="times"></fa>
+    </a>
+  </li>
+</ul>

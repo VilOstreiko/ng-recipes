@@ -1,0 +1,51 @@
+.categories-select {
+  width: 30%;
+}
+
+label {
+  font-size: 18px;
+  margin-top: 25px;
+}
+
+.submit-button {
+  padding: 10px 50px;
+  font-weight: bold;
+}
+
+.remove-ingredient-btn, .add-ingredient-btn {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 3px 10px;
+  vertical-align: middle;
+  color: #fff;
+}
+
+.add-ingredient-btn {
+  margin-left: 15px;
+}
+
+.remove-ingredient-btn {
+  float: left;
+  width: 40px;
+  height: 40px;
+  padding: 0 10px;
+  background-color: #d54674;
+  &:hover {
+    background-color: #d80c4e;
+  }
+}
+
+.ingredients-inputs-wp {
+  padding-left: 20px;
+  margin-top: 15px;
+  input {
+    display: inline-block;
+    float: left;
+    width: calc(100% - 40px);
+    height: 40px;
+  }
+}
+
+.inputs-error {
+  color: #dc0639;
+}

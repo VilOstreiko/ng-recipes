@@ -1,0 +1,61 @@
+.recipe {
+  padding: 10px;
+  border: 1px solid #d3d3d3;
+  margin-top: 30px;
+  color: #757575;
+  hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  &__title {
+    font-size: 20px;
+    line-height: 1.2em;
+    height: 2.4em;
+    overflow: hidden;
+  }
+  &__descr {
+    line-height: 1.4em;
+    height: 5.6em;
+    overflow: hidden;
+  }
+
+  &__img-wp {
+    height: 240px;
+    line-height: 240px;
+    text-align: center;
+  }
+
+  &__img {
+    max-height: 100%;
+  }
+
+  &__like-cont {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  &__like-ico {
+    color: #d54674;
+  }
+
+  &__btns-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  &__edit-cont, &__rate-cont {
+    flex: 0 0 auto;
+  }
+
+  &__opt-btn {
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

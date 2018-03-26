@@ -1,0 +1,22 @@
+<header class="container-fluid header">
+  <div class="row header__row">
+    <div class="col-xs-2">
+      <h1 class="header__main-title"><a routerLink="/">Recipes</a></h1>
+    </div>
+    <div class="col-xs-10 text-right">
+      <nav class="header__nav">
+        <ul>
+          <li class="header__nav-item"
+              routerLinkActive="header__nav-item--active"
+              [routerLinkActiveOptions]="{exact: true}"
+          ><a routerLink="/recipes">All Recipes</a></li>
+          <li class="header__nav-item" routerLinkActive="header__nav-item--active"
+          ><a routerLink="/recipes/favorites">Favorites</a></li>
+          <li class="header__nav-item" routerLinkActive="header__nav-item--active"
+          ><a routerLink="/purchases">Purchases</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</header>

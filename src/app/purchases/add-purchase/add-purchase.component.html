@@ -1,0 +1,18 @@
+<h4 class="purchases-subtitle">Ingredient</h4>
+<form (ngSubmit)="addIngredient()" #purchasesForm="ngForm">
+  <input
+    type="text"
+    class="form-control purchases-input"
+    ngModel
+    name="newIngredient"
+    required
+  >
+  <button
+    class="btn btn-success"
+    [disabled]="!purchasesForm.valid"
+  >
+    <fa name="shopping-cart"></fa>
+    Add to purchases
+  </button>
+</form>
+<hr>

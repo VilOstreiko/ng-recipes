@@ -1,0 +1,51 @@
+<div class="col-xs-3">
+  <div
+    class="recipe">
+    <div class="recipe__img-wp">
+      <img src="{{ recipe.photoUrl }}" alt="Recipe image" class="recipe__img">
+    </div>
+
+    <h3 class="recipe__title">
+      <a
+        [routerLink]="['/recipes', recipe.id]"
+      >
+        {{ recipe.title }}
+      </a>
+    </h3>
+    <p class="recipe__descr">
+      {{ recipe.description }}
+    </p>
+    <p class="recipe__like-cont">
+      <fa name="heart" class="recipe__like-ico"></fa>
+      {{ recipe.likes }}
+    </p>
+    <hr>
+    <div class="recipe__btns-cont">
+      <div class="recipe__rate-cont">
+        <a class="recipe__opt-btn" (click)="likeRecipe(recipe.id)">
+          <fa name="thumbs-up"></fa>
+        </a>
+        <a class="recipe__opt-btn" (click)="dislikeRecipe(recipe.id)">
+          <fa name="thumbs-down"></fa>
+        </a>
+      </div>
+      <div class="recipe__edit-cont">
+        <a
+          class="recipe__opt-btn"
+          [routerLink]="['/recipes', recipe.id]"
+        >
+          <fa name="eye"></fa>
+        </a>
+        <a
+          class="recipe__opt-btn"
+          [routerLink]="['/recipes', 'edit', recipe.id]"
+        >
+          <fa name="pencil"></fa>
+        </a>
+        <a class="recipe__opt-btn" (click)="deleteRecipe()">
+          <fa name="trash"></fa>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
